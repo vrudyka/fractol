@@ -20,9 +20,10 @@
 # define UP			91
 # define Q			12
 # define A			0
+# define SPACE		49
 
-# define WIN_W		840
-# define WIN_H		540
+# define WIN_W		1680
+# define WIN_H		1080
 
 # define X_MASK		0
 
@@ -56,6 +57,7 @@ typedef struct		s_var
 {
 	pthread_t		threads[THREAD];
 	t_img			*img;
+	int				pause;
 	int				maxI;
 	char			set;
 	int				xstart;

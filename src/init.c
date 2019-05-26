@@ -71,5 +71,6 @@ t_var			*img_init(char *str)
 			&img->bpp, &img->size_line, &img->endian);
 	var->img = img;
 	var->maxI = 100;
+	var->pause = 0;
 	return (var);
 }

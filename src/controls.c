@@ -26,7 +26,7 @@ int				mouse_press(int butt, int x, int y, t_var *var)
 
 int				mouse_move(int x, int y, t_var *var)
 {
-	if (var->set == 'j' && (x >= 0 && x < WIN_W) && (y >= 0 && y < WIN_H))
+	if (var->set == 'j' && (x >= 0 && x < WIN_W) && (y >= 0 && y < WIN_H) && var->pause == 0)
 	{
 		var->cim = (((double)x * 2) / WIN_W) - 1;
 		var->cre = (((double)y * 2) / WIN_H) - 1;
@@ -51,6 +51,8 @@ int				key_down(int key, t_var *var)
 		var->maxI += 20;
 	else if (key == A)
 		var->maxI -= 20;
+	else if (key == 49)
+		var->pause = var->pause == 0 ? 1 : 0;
 	update(var);
 	return (0);
 }
